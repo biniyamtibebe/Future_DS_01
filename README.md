@@ -53,9 +53,9 @@ To run this project, ensure you have the following installed:
    
  - Libraries:
    
-    bash
+       bash
  
-      pip install pandas numpy nltk matplotlib seaborn wordcloud
+        pip install pandas numpy nltk matplotlib seaborn wordcloud
  
 
 - Download the NLTK data:
@@ -220,14 +220,16 @@ plain
 
      app = dash.Dash(__name__)
 
-   app.layout = html.Div([
-     html.H1("Social Media Sentiment Analysis Dashboard"),
-      dcc.Graph(id='sentiment-distribution', figure=px.pie(df, names='Sentiment', title='Sentiment Distribution')),
-      dcc.Graph(id='engagement-trends', figure=px.line(df, x='Date', y='Engagement', title='Engagement Trends Over Time'))
-])
+        app.layout = html.Div([
+           html.H1("Social Media Sentiment Analysis Dashboard"), 
+     
+            dcc.Graph(id='sentiment-distribution', figure=px.pie(df, names='Sentiment', title='Sentiment Distribution')),
+      
+              dcc.Graph(id='engagement-trends', figure=px.line(df, x='Date', y='Engagement', title='Engagement Trends Over Time'))
+             ])
 
-   if __name__ == '__main__':
-     app.run_server(debug=True)
+           if __name__ == '__main__':
+           app.run_server(debug=True)
 
 
 
