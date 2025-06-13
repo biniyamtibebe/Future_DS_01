@@ -53,30 +53,33 @@ To run this project, ensure you have the following installed:
    
  - Libraries:
    
- bash 
+    bash
  
- pip install pandas numpy nltk matplotlib seaborn wordcloud
+    pip install pandas numpy nltk matplotlib seaborn wordcloud
  
 
 - Download the NLTK data:
   
  python 
  
-  import nltk
+    import nltk
   
-  nltk.download('vader_lexicon')
+    nltk.download('vader_lexicon')
   
-  nltk.download('stopwords')
+    nltk.download('stopwords')
   
-  nltk.download('punkt')
-  
-import nltk
+    nltk.download('punkt')
 
-nltk.download('vader_lexicon')
+    ----
+  
 
-nltk.download('stopwords')
+    import nltk
 
-nltk.download('punkt')
+     nltk.download('vader_lexicon')
+
+     nltk.download('stopwords')
+
+     nltk.download('punkt')
 
 - The dataset file: df = pd.read_csv(r'C:\Users\hp\Downloads\archive (1)\sentimentdataset.csv', encoding='latin-1')----
 
@@ -84,21 +87,21 @@ nltk.download('punkt')
 
 plain
 
- sentiment-analysis/
+   sentiment-analysis/
 
-├── data/
+  ├── data/
 
-│   └── sentimentsdataset.csv
+   │   └── sentimentsdataset.csv
 
-├── src/
+   ├── src/
 
-│   └── sentiment_analysis.py
+  │   └── sentiment_analysis.py
 
-├── README.md
+   ├── README.md
 
-├── requirements.txt
+   ├── requirements.txt
 
-└── output/
+   └── output/
 
     ├── sentiment_distribution.png
     
@@ -110,15 +113,15 @@ plain
     
 ----
 
-- ✅ data/: Contains the dataset file.
+  - ✅ data/: Contains the dataset file.
   
-- ✅ src/: Python script for analysis and visualization.
+  - ✅ src/: Python script for analysis and visualization.
   
-- ✅ output/: Stores generated visualizations.
+  - ✅ output/: Stores generated visualizations.
   
-- ✅ requirements.txt: Lists required Python libraries.
+  - ✅ requirements.txt: Lists required Python libraries.
   
-- ✅ README.md: This file. 
+  - ✅ README.md: This file. 
 ----
 
 ## Setup Instructions
@@ -127,25 +130,25 @@ plain
 
 ### 1. Clone the Repository:
 
-git clone <repository-url>
+  git clone <repository-url>
 
-cd sentiment-analysis
+  cd sentiment-analysis
 
 ----
 ### 2. Install Dependencies:
 
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 ----
 ### 3. Place the Dataset:
 
-Ensure sentimentsdataset.csv is in the data/ directory.
+    Ensure sentimentsdataset.csv is in the data/ directory.
 
 ----
 
 ### 4. Run the Analysis:
 
-python src/sentiment_analysis.py
+    python src/sentiment_analysis.py
 
 ----
 
@@ -157,55 +160,55 @@ python src/sentiment_analysis.py
 ### 1. Data Loading:
 
 
-Load the sentiments dataset.csv using pandas.
+  Load the sentiments dataset.csv using pandas.
 
-Clean data by removing duplicates, handling missing values, and standardizing text (e.g., lowercasing Sentiment, Platform).
+  Clean data by removing duplicates, handling missing values, and standardizing text (e.g., lowercasing Sentiment, Platform).
 
 ### 2.Sentiment Analysis:
 
-Use NLTK’s VADER (Valence Aware Dictionary and sEntiment Reasoner) to compute sentiment scores for the Text column.
+   Use NLTK’s VADER (Valence Aware Dictionary and sEntiment Reasoner) to compute sentiment scores for the Text column.
 
-Compare VADER scores with the dataset’s Sentiment labels to validate or refine classifications.
+  Compare VADER scores with the dataset’s Sentiment labels to validate or refine classifications.
 
-Group sentiments into broader categories (e.g., Positive, Negative, Neutral).
+  Group sentiments into broader categories (e.g., Positive, Negative, Neutral).
 
 
 ### 3.Temporal Analysis:
 
-Aggregate posts by Year, Month, or Date to identify trends.
+   Aggregate posts by Year, Month, or Date to identify trends.
 
-Calculate average engagement (Likes + Retweets) over time.
+  Calculate average engagement (Likes + Retweets) over time.
 
 ### 4. Platform-Specific Analysis:
 
-Compare sentiment distribution across platforms (Twitter, Instagram, Facebook).
+  Compare sentiment distribution across platforms (Twitter, Instagram, Facebook).
 
-Compute the average number of Likes and Retweets per platform.
+   Compute the average number of Likes and Retweets per platform.
 
 ### 5.Hashtag Trends:
 
-Extract and count unique hashtags.
+   Extract and count unique hashtags.
 
-Generate a word cloud of top hashtags.
+   Generate a word cloud of top hashtags.
 
 ### 6.Geographical Analysis:
 
-Group posts by Country to analyze sentiment distribution.
+   Group posts by Country to analyze sentiment distribution.
 
-Visualize engagement metrics by country.
+  Visualize engagement metrics by country.
 
 
 ### 7.Visualization:
 
-Create plots using matplotlib and seaborn:
+ - Create plots using matplotlib and seaborn:
 
-Pie chart: Sentiment distribution.
+ - Pie chart: Sentiment distribution.
 
-Line chart: Engagement trends over time.
+ -Line chart: Engagement trends over time.
 
-Bar chart: Sentiment by platform.
+  -Bar chart: Sentiment by platform.
 
-Word
+  -Word
 
 
 
