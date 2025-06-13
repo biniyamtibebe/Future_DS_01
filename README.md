@@ -55,7 +55,7 @@ To run this project, ensure you have the following installed:
    
     bash
  
-    pip install pandas numpy nltk matplotlib seaborn wordcloud
+      pip install pandas numpy nltk matplotlib seaborn wordcloud
  
 
 - Download the NLTK data:
@@ -87,29 +87,29 @@ To run this project, ensure you have the following installed:
 
 plain
 
-   sentiment-analysis/
+    sentiment-analysis/
 
-  ├── data/
+    ├── data/
 
-   │   └── sentimentsdataset.csv
+    │   └── sentimentsdataset.csv
 
-   ├── src/
+    ├── src/
 
-  │   └── sentiment_analysis.py
+       │   └── sentiment_analysis.py
 
-   ├── README.md
+          ├── README.md
 
-   ├── requirements.txt
+            ├── requirements.txt
 
-   └── output/
+            └── output/
 
-    ├── sentiment_distribution.png
+             ├── sentiment_distribution.png
     
-    ├── temporal_trends.png
+              ├── temporal_trends.png
     
-    ├── platform_sentiment.png
+             ├── platform_sentiment.png
     
-    ├── hashtag_wordcloud.png
+              ├── hashtag_wordcloud.png
     
 ----
 
@@ -130,25 +130,25 @@ plain
 
 ### 1. Clone the Repository:
 
-  git clone <repository-url>
+       git clone <repository-url>
 
-  cd sentiment-analysis
+       cd sentiment-analysis
 
 ----
 ### 2. Install Dependencies:
 
-    pip install -r requirements.txt
+      pip install -r requirements.txt
 
 ----
 ### 3. Place the Dataset:
 
-    Ensure sentimentsdataset.csv is in the data/ directory.
+       Ensure sentimentsdataset.csv is in the data/ directory.
 
 ----
 
 ### 4. Run the Analysis:
 
-    python src/sentiment_analysis.py
+       python src/sentiment_analysis.py
 
 ----
 
@@ -160,55 +160,74 @@ plain
 ### 1. Data Loading:
 
 
-  Load the sentiments dataset.csv using pandas.
+      Load the sentiments dataset.csv using pandas.
 
-  Clean data by removing duplicates, handling missing values, and standardizing text (e.g., lowercasing Sentiment, Platform).
+     Clean data by removing duplicates, handling missing values, and standardizing text (e.g., lowercasing Sentiment, Platform).
 
 ### 2.Sentiment Analysis:
 
-   Use NLTK’s VADER (Valence Aware Dictionary and sEntiment Reasoner) to compute sentiment scores for the Text column.
+      Use NLTK’s VADER (Valence Aware Dictionary and sEntiment Reasoner) to compute sentiment scores for the Text column.
 
-  Compare VADER scores with the dataset’s Sentiment labels to validate or refine classifications.
+     Compare VADER scores with the dataset’s Sentiment labels to validate or refine classifications.
 
-  Group sentiments into broader categories (e.g., Positive, Negative, Neutral).
+    Group sentiments into broader categories (e.g., Positive, Negative, Neutral).
 
 
 ### 3.Temporal Analysis:
 
-   Aggregate posts by Year, Month, or Date to identify trends.
+     Aggregate posts by Year, Month, or Date to identify trends.
 
-  Calculate average engagement (Likes + Retweets) over time.
+     Calculate average engagement (Likes + Retweets) over time.
 
 ### 4. Platform-Specific Analysis:
 
-  Compare sentiment distribution across platforms (Twitter, Instagram, Facebook).
+    Compare sentiment distribution across platforms (Twitter, Instagram, Facebook).
 
-   Compute the average number of Likes and Retweets per platform.
+    Compute the average number of Likes and Retweets per platform.
 
 ### 5.Hashtag Trends:
 
-   Extract and count unique hashtags.
+    Extract and count unique hashtags.
 
-   Generate a word cloud of top hashtags.
+    Generate a word cloud of top hashtags.
 
 ### 6.Geographical Analysis:
 
-   Group posts by Country to analyze sentiment distribution.
+    Group posts by Country to analyze sentiment distribution.
 
-  Visualize engagement metrics by country.
+    Visualize engagement metrics by country.
 
 
 ### 7.Visualization:
 
- - Create plots using matplotlib and seaborn:
+   - Create plots using matplotlib and seaborn:
 
- - Pie chart: Sentiment distribution.
+   - Pie chart: Sentiment distribution.
 
- -Line chart: Engagement trends over time.
+   -Line chart: Engagement trends over time.
 
-  -Bar chart: Sentiment by platform.
+   -Bar chart: Sentiment by platform.
 
-  -Word
+   -Word
+
+   ----
+
+   ### Dashboard 
+
+   The dashboard application for the social media sentiment analysis project is built using Dash. It provides an interactive interface for users to explore sentiment distributions, engagement trends, and geographical insights. Below is a snippet of the main code that initializes the Dash app and sets up the layout and callbacks for dynamic visualizations:
+
+   ----
+
+     app = dash.Dash(__name__)
+
+   app.layout = html.Div([
+     html.H1("Social Media Sentiment Analysis Dashboard"),
+      dcc.Graph(id='sentiment-distribution', figure=px.pie(df, names='Sentiment', title='Sentiment Distribution')),
+      dcc.Graph(id='engagement-trends', figure=px.line(df, x='Date', y='Engagement', title='Engagement Trends Over Time'))
+])
+
+   if __name__ == '__main__':
+     app.run_server(debug=True)
 
 
 
